@@ -57,7 +57,7 @@ const Shop = () => {
               <h3 className="font-display text-lg text-foreground mb-4">Categories</h3>
               <div className="space-y-3">
                 {categories.map((cat) => (
-                  <label key={cat} className="flex items-center gap-3 cursor-pointer group">
+                  <label key={cat} className="flex items-center gap-3 cursor-pointer group" onClick={() => toggleCategory(cat)}>
                     <div
                       className={`w-4 h-4 border transition-colors duration-200 flex items-center justify-center ${
                         selectedCategories.includes(cat)
