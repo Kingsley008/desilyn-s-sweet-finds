@@ -25,22 +25,26 @@ const SiteHeader = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
         <nav className="hidden md:flex items-center gap-8">
-          {["Home", "Shop", "Trending"].map((item) => (
-            <a
-              key={item}
-              href="#"
+          {[
+            { label: "Home", to: "/" },
+            { label: "Shop", to: "/shop" },
+            { label: "Trending", to: "/shop" },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              to={item.to}
               className="text-sm font-body tracking-widest uppercase text-foreground/70 hover:text-foreground transition-colors duration-300"
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </nav>
 
-        <a href="#" className="absolute left-1/2 -translate-x-1/2">
-          <h1 className="font-display text-3xl lg:text-4xl italic font-medium text-foreground tracking-wide">
+        <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+          <span className="font-display text-3xl lg:text-4xl italic font-medium text-foreground tracking-wide">
             DesiLyn
-          </h1>
-        </a>
+          </span>
+        </Link>
 
         <div className="flex items-center gap-5 ml-auto">
           {[Search, User, Heart, ShoppingBag].map((Icon, i) => (
